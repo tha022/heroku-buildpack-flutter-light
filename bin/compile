@@ -117,9 +117,12 @@ if [ "$FLUTTER_CLEANUP" != false ]; then
   print "Cleaning up Flutter source files and the SDK"
 
   mkdir -p $SOURCE_DIR/TO_DELETE
+  print "Cleaning up Flutter source files and the SDK. Source dir: $SOURCE_DIR"
+  print "Cleaning up Flutter source files and the SDK. Source/to_delete dir: ${SOURCE_DIR/TO_DELETE}"
 
   mv !("TO_DELETE"|"build"|"static.json"|"config") TO_DELETE
   rm -rf TO_DELETE
+  print "Cleaning up Flutter source files and the SDK. Deleted."
 fi
 
 print "Moving static files to the deploy dir"
