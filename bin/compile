@@ -121,7 +121,11 @@ if [ "$FLUTTER_CLEANUP" != false ]; then
 
   print "Copying Procfile to /app"
   cp $SOURCE_DIR/Procfile "/app"
+  cp $SOURCE_DIR/Procfile "/app/$FLUTTER_DEPLOY_DIR"
+  print "Listing /app"
   ls -lsh /app
+  print "Listing /app/$FLUTTER_DEPLOY_DIR"
+  ls -lsh /app/$FLUTTER_DEPLOY_DIR
 
   print "Cleaning up Flutter source files and the SDK. Listing sourcedir and sourcedir/config"
   ls -lsh $SOURCE_DIR
