@@ -116,8 +116,9 @@ fi
 if [ "$FLUTTER_CLEANUP" != false ]; then
   print "Cleaning up Flutter source files and the SDK"
 
-  print "Cleaning up Flutter source files and the SDK. Copy config folder to deploy dir $FLUTTER_DEPLOY_DIR and /app/$FLUTTER_DEPLOY_DIR"
+  print "Cleaning up Flutter source files and the SDK. Copy config folder and Procfile to deploy dir $FLUTTER_DEPLOY_DIR and /app/$FLUTTER_DEPLOY_DIR"
   cp -r $SOURCE_DIR/config "/app/$FLUTTER_DEPLOY_DIR"
+  cp $SOURCE_DIR/Procfile "/app"
 
   print "Cleaning up Flutter source files and the SDK. Listing sourcedir and sourcedir/config"
   ls -lsh $SOURCE_DIR
