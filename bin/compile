@@ -142,9 +142,9 @@ mv $SOURCE_DIR/build/web/* $DEPLOY_DIR
 rm -rf $SOURCE_DIR/build
 
 # heroku-buildpac-static compatibility
-if [ ! -f $BUILD_DIR/static.json ]; then
-  echo "{}" > $BUILD_DIR/static.json
-fi
+#if [ ! -f $BUILD_DIR/static.json ]; then
+#  echo "{}" > $BUILD_DIR/static.json
+#fi
 
 if [ "$FLUTTER_CLEANUP" == false ]; then
   print "Setting up the Dart & Flutter command line tools"
@@ -158,3 +158,6 @@ export PATH=\$PATH:$SOURCE_DIR/.flutter/bin/cache/dart-sdk/bin/
 export PATH=\$PATH:$SOURCE_DIR/.pub-cache/bin
 EOT
 fi
+
+print "List Procfile in /app"
+  ls -lsh /app
